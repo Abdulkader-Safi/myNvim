@@ -8,13 +8,12 @@ end
 treesitter.setup({
   -- enable syntax highlighting
   highlight = {
+    -- false will disable the whole extension
     enable = true,
+
+    additional_vim_regex_highlighting = false,
   },
-  -- enable indentation
-  indent = { enable = true },
-  -- enable autotagging (w/ nvim-ts-autotag plugin)
-  autotag = { enable = true },
-  -- ensure these language parsers are installed
+
   ensure_installed = {
     "json",
     "javascript",
