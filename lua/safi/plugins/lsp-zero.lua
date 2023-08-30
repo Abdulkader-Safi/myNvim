@@ -1,5 +1,6 @@
-local setup, lsp = pcall(require, "lazy-lsp")
+local setup, lsp = pcall(require, "lsp-zero") 
 if not setup then
+  print("lazy-lsp not installed")
   return
 end
 
@@ -8,12 +9,9 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	'tsserver',
 	'eslint',
-	'sumneko_lua',
-	'rust_analyzer',
   'html',
   'cssls',
   'tailwindcss',
-  'pylsp',
 })
 
 local cmp = require('cmp')
@@ -61,3 +59,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.diagnostic.config({
+  virtual_text = true
+})
