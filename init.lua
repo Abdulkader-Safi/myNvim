@@ -1,5 +1,3 @@
-print("<Abdulkader Safi />")
-
 require("safi.plugins-setup")
 
 require("safi.core.colorscheme")
@@ -13,3 +11,6 @@ require("safi.plugins.nvim-cmp")
 require("safi.plugins.treesitter")
 require("safi.plugins.autopairs")
 require("safi.plugins.gitsigns")
+require("safi.plugins.lazy-lsp")
+
+print("<Abdulkader Safi />")
