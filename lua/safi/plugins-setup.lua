@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
   -- essential plugins
   use("tpope/vim-surround") -- add, delete, change surroundings (it's awesome)
+
   use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion)
 
   -- comment with gc
@@ -52,20 +53,26 @@ return packer.startup(function(use)
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
+
   use("hrsh7th/cmp-buffer") -- source for text in buffer
+
   use("hrsh7th/cmp-path") -- source for file system paths
 
   -- snippets
   use("L3MON4D3/LuaSnip") -- snippet engine
+
   use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+
   use("rafamadriz/friendly-snippets") -- useful snippets
 
   -- treesitter
   use('nvim-treesitter/nvim-treesitter',{ run = ':TSUpdate' })
+
   use('nvim-treesitter/playground')
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
   -- git integration
@@ -91,6 +98,10 @@ return packer.startup(function(use)
       {'hrsh7th/cmp-nvim-lua'},
     }
   }
+
+  use('MunifTanjim/prettier.nvim')
+
+  use('jose-elias-alvarez/null-ls.nvim')
 
   if packer_bootstrap then
     require("packer").sync()
