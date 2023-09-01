@@ -1,4 +1,4 @@
-local setup, lsp = pcall(require, "lsp-zero") 
+local setup, lsp = pcall(require, "lsp-zero")
 if not setup then
   print("lazy-lsp not installed")
   return
