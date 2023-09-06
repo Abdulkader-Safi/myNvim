@@ -12,3 +12,6 @@ Mac OS and Linux
 ```
 git clone https://github.com/Abdulkader-Safi/myNvim.git ~/.config/nvim
 ```
+
+after installing packer and this config run `nvim` first time to install all packges then quit `nvim` then run `nvim` agin every thing will be setuped and ready
+
