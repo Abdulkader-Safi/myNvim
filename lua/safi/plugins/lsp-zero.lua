@@ -12,6 +12,9 @@ lsp.ensure_installed({
   'html',
   'cssls',
   'tailwindcss',
+  'pylsp',
+  'bashls',
+  'powershell_es',
 })
 
 local cmp = require('cmp')
