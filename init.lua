@@ -18,3 +18,5 @@ require("safi.plugins.mason")
 require("safi.plugins.lsp-config")
 require("safi.plugins.prettier")
 require("safi.plugins.null-ls")
+require("safi.plugins.colorizer")
+

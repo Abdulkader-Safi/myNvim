@@ -105,6 +105,8 @@ return packer.startup(function(use)
 
   use('jose-elias-alvarez/null-ls.nvim')
 
+  use('norcalli/nvim-colorizer.lua')
+
   if packer_bootstrap then
     require("packer").sync()
   end
