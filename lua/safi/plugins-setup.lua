@@ -29,7 +29,9 @@ return packer.startup(function(use)
 
   use("wbthomason/packer.nvim") -- packer can manage itself
 
-  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  -- Theme
+  use("bluz71/vim-nightfly-guicolors")
+  use("projekt0n/github-nvim-theme")
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
