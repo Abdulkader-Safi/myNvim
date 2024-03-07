@@ -20,3 +20,5 @@ lspconfig["dartls"].setup({
 		},
 	},
 })
+
+lspconfig["gopls"].setup({})
