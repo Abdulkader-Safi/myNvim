@@ -6,4 +6,4 @@ if not setup then
 end
 
 -- enable comment
-comment.setup()
+comment.setup({})
