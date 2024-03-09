@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  grail = {
+    loaded = true,
+    path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/grail",
+    url = "https://github.com/chama-chomo/grail"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
