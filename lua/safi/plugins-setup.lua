@@ -101,6 +101,8 @@ return packer.startup(function(use)
     }
   }
 
+  use('glepnir/lspsaga.nvim')
+
   use('MunifTanjim/prettier.nvim')
 
   use('jose-elias-alvarez/null-ls.nvim')

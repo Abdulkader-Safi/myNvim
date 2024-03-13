@@ -10,27 +10,39 @@ treesitter.setup({
   highlight = {
     -- false will disable the whole extension
     enable = true,
-
-    additional_vim_regex_highlighting = false,
+    diable = {},
+    -- additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true,
+    disable = {},
   },
 
   ensure_installed = {
     "json",
+    "tsx",
     "javascript",
     "typescript",
-    "tsx",
-    "yaml",
-    "html",
-    "css",
     "markdown",
     "markdown_inline",
     "graphql",
     "bash",
-    "lua",
     "vim",
     "dockerfile",
     "gitignore",
+    "toml",
+    "yaml",
+    "css",
+    "html",
+    "lua"
   },
+  autotag = {
+    enable = true,
+  },
+
   -- auto install above language parsers
   auto_install = true,
 })
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

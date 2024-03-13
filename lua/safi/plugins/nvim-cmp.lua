@@ -46,8 +46,14 @@ cmp.setup({
   -- configure lspkind for vs-code like icons
   formatting = {
     format = lspkind.cmp_format({
-      maxwidth = 50,
-      ellipsis_char = "...",
+      with_text = false,
+      maxwidth = 80,
+      -- ellipsis_char = "...",
     }),
   },
 })
+
+vim.cmd [[
+  set completeopt=menuone,noinsert,noselect
+  highlight! default link CmpItemKind CmpItemMenuDefault
+]]

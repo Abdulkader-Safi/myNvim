@@ -19,4 +19,4 @@ require("safi.plugins.lsp-config")
 require("safi.plugins.prettier")
 require("safi.plugins.null-ls")
 require("safi.plugins.colorizer")
-
+require("safi.plugins.ts-autotag")
