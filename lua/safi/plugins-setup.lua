@@ -32,6 +32,7 @@ return packer.startup(function(use)
   -- Theme
   use("bluz71/vim-nightfly-guicolors")
   use("projekt0n/github-nvim-theme")
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- vs-code like icons
   use("nvim-tree/nvim-web-devicons")
@@ -79,6 +80,7 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+  use('dinhhuy258/git.nvim')
 
   -- telescope
   use {

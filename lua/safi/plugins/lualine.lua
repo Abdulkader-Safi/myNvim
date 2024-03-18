@@ -6,7 +6,7 @@ if not status then
 end
 
 -- get lualine nightfly theme
-local lualine_nightfly = require("lualine.themes.nightfly")
+local lualine_nightfly = require("lualine.themes.catppuccin")
 
 -- new colors for theme
 local new_colors = {
@@ -33,7 +33,7 @@ lualine_nightfly.command = {
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = lualine_nightfly,
+    --theme = "cattppuccin",
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
   },
