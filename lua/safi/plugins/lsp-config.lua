@@ -59,3 +59,4 @@ lspconfig["tsserver"].setup({
   }, 
 })
 
+lspconfig['tailwindcss'].setup({})
