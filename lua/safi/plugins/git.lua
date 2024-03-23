@@ -1,7 +1,7 @@
 local status, git = pcall(require, "git")
-if not status then 
+if not status then
   print("Git is not installed")
-  return 
+  return
 end
 
 git.setup({
@@ -12,3 +12,4 @@ git.setup({
     browse = "<Leader>go",
   }
 })
+
