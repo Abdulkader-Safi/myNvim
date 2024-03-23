@@ -241,6 +241,11 @@ _G.packer_plugins = {
     path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["vim-ReplaceWithRegister"] = {
     loaded = true,
     path = "/Users/abdulkader/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",

@@ -6,4 +6,11 @@ if not setup then
 end
 
 -- enable comment
-comment.setup({})
+comment.setup({
+  toggler = {
+    ---Line-comment toggle keymap
+    line = '<leader>c',
+    ---Block-comment toggle keymap
+    block = '<leader>b',
+  },
+})
