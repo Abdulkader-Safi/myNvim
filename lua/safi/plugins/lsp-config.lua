@@ -1,16 +1,16 @@
-local setup, lspconfig = pcall(require, 'lspconfig')
-if not setup then
+local setup_lsp, lspconfig = pcall(require, 'lspconfig')
+if not setup_lsp then
   print("lsp config not installed")
   return
 end
 
-local setup, cmpNvimLsp = pcall(require, 'cmp_nvim_lsp') 
-if not setup then
+local setup_cmp, cmpNvimLsp = pcall(require, 'cmp_nvim_lsp')
+if not setup_cmp then
   print("cmp-nvim-lsp config not installed")
   return
 end
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
  vim.keymap.set(
     "n",
     "K",
@@ -35,6 +35,8 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = cmpNvimLsp.default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local signs = { Error = "✖", Warn = "", Hint = "󰠠", Info = "" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
@@ -75,7 +77,53 @@ lspconfig["lua_ls"].setup({
 })
 
 -- configure css server
-lspconfig["cssls"].setup({
+lspconfig["tsserver"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  -- flags = lsp_flags,
+  settings = {
+    completions = {
+      completeFunctionCalls = true
+    }
+  }
+})
+
+lspconfig["htmx"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+lspconfig['gopls'].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["rust_analyzer"].setup({
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+})
+
+lspconfig["eslint"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["tailwindcss"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["mdx_analyzer"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- lspconfig["nginx_language_server"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
