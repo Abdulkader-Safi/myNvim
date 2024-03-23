@@ -8,6 +8,11 @@ if not setup then
   print("Mason-lspconfig not installed")
   return
 end
+local setup, masontools = pcall(require, "mason-tool-installer")
+if not setup then
+  print("Mason-tool not installed")
+  return
+end
 
 mason.setup({
   ui = {
@@ -20,5 +25,20 @@ mason.setup({
 })
 
 masonlsp.setup({
-  ensure_installed = { "tailwindcss" },
+  ensure_installed = {
+    "tsserver",
+    "lua_ls",
+    "html",
+    "cssls",
+  },
+  automatic_installation = true,
+})
+
+masontools.setup({
+  ensure_installed = {
+    "prettier",
+    "stylua",
+    "eslint_d",
+    "prettierd",
+  },
 })

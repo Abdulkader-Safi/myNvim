@@ -96,12 +96,16 @@ return packer.startup(function(use)
       {'neovim/nvim-lspconfig'},
       {'williamboman/mason.nvim'},
       {'williamboman/mason-lspconfig.nvim'},
+      {'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
       -- Autocompletion
       {'hrsh7th/cmp-nvim-lsp'},
       {'hrsh7th/cmp-nvim-lua'},
     }
   }
+
+  use('hrsh7th/cmp-nvim-lsp')
+
 
   use('glepnir/lspsaga.nvim')
 
