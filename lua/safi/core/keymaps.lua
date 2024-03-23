@@ -47,3 +47,5 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 -- Prettier
 keymap.set("n", "<leader>fB", ":Prettier<CR>")
 
+-- ToggleTerm
+keymap.set("n", "<leader>tt", ":ToggleTerm<Cr>")
