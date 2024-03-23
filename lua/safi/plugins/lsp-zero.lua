@@ -3,7 +3,7 @@ if not setup then
   print("lazy-lsp not installed")
   return
 end
-
+-- lsp.extend_lspconfig()
 lsp.preset("recommended")
 
 local cmp = require('cmp')
