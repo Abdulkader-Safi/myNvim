@@ -10,6 +10,12 @@ if not setup_cmp then
   return
 end
 
+local setup_util, util = pcall(require, 'lspconfig/util')
+if not setup_util then
+  print("cmp-nvim-lsp config not installed")
+  return
+end
+
 local on_attach = function(_, bufnr)
  vim.keymap.set(
     "n",
@@ -47,6 +53,8 @@ end
 lspconfig["tsserver"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" }
 })
 
 -- configure html server
@@ -96,6 +104,18 @@ lspconfig["htmx"].setup({
 lspconfig['gopls'].setup({
   capabilities = capabilities,
   on_attach = on_attach,
+  cmd = {"gopls"},
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
 })
 
 lspconfig["rust_analyzer"].setup({
@@ -123,7 +143,7 @@ lspconfig["mdx_analyzer"].setup({
   on_attach = on_attach,
 })
 
--- lspconfig["nginx_language_server"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
+lspconfig["pyright"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})

@@ -37,3 +37,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+opt.title = true
+opt.wildignore:append({ "*/node_modules/*" })
