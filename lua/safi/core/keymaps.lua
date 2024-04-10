@@ -47,5 +47,15 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 -- Prettier
 keymap.set("n", "<leader>fB", ":Prettier<CR>")
 
--- ToggleTerm
-keymap.set("n", "\\", ":ToggleTerm<Cr>")
+-- neovide
+if vim.g.neovide then
+  keymap.set("v", "<D-c>", '"+y')
+  keymap.set("v", "<D-v>", '"+p')
+  keymap.set("n", "<D-v>", '"+p')
+end
+
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap("", "<D-v>", '+p<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", "<D-v>", '<C-R>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<D-v>", '+p<CR>+', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<D-v>", '<CR>+', { noremap = true, silent = true })
